@@ -1,0 +1,28 @@
+ {% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Изменение рецепта {% endblock %}</h1>
+    <form method="post" class="h1">
+        <table>
+        <tr>
+            <td class="post_calculate"> <label for="name_recipe">Рецепт</label></td>
+            <td class="post_calculate"> <label for="ingridients">Ингридиенты</label></td>
+
+        </tr>
+        <tr>
+        <td class="post_calculate"> <input type="text" name="name_recipe"
+               placeholder="название рецепта"
+               value="{{ request.form['name_recipe'] or recipe['name']}}"></input></td>
+
+        <td class="post_calculate"><input type="text" name="ingridients"
+               placeholder="ингредиенты"
+               value="{{ request.form['ingridients'] or recipe['ingridients']}}"></input></td>
+         </tr>
+
+
+
+
+        <button type="submit">Submit</button>
+            </table>
+    </form>
+{% endblock %}

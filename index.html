@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} История {% endblock %}</h1>
+ <div class='h1'>
+<table>
+                <tr>
+                    <th>Название</th>
+                    <th>Дата</th>
+                    <th>Результат</th>
+                </tr>
+
+    {% for all in hist%}
+
+
+                <tr>
+                    <td class="post_calculate">{{all['recipe']}}</td>
+                    <td class="post_calculate">{{all['created']}}</td>
+                    <td class="post_calculate">{{all['result']}}</td>
+                </tr>
+    {% endfor %}
+
+</table>
+</div>
+{% endblock %}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head style="background:#788ec5">
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %} - FlaskApp</title>
+    <style>
+        .forma{
+               background-color: #f3f3f3;
+        }
+        .forma1{
+               background-color: #f3f3f3;
+               width:460px;
+        }
+         .h1{
+        display:table;
+        text-align:center;
+        padding:10px;
+        margin:0 auto;
+
+        border: 1px solid #f3f3f3;
+        background-color: #f3f3f3;}
+        h1{
+        display:table;
+        text-align:center;
+        padding:10px;
+        margin:0 auto;
+
+        border: 1px solid #f3f3f3;
+        background-color: #f3f3f3;
+
+
+        color: #d64161;
+            font-size: 2em;
+            margin-left: 50px;
+            text-decoration: none;
+
+        }
+        .post {
+            width:500px;
+            padding: 10px;
+            margin: 5px;
+            background-color: #f3f3f3;
+
+        }
+        .disciption_calculate{
+        display:inline;
+        border: 1px solid #000;
+        margin-right:5px;
+        padding:3px;
+        }
+        .post_horizont{
+        display:inline;
+
+        }
+        .tables{
+        display:inline;
+        }
+        table{
+
+        border-collapse:collapse;
+        width:400px;}
+        th,td{
+        border: 1px solid #000;
+        algin:center
+        text-algin:center;
+        padding:8px
+        border-bottom:1px solid #ddd;}
+        th{
+        background=color^ #f2f2f2;}
+        ul .hr li{
+        display:inline;}
+        .dicription{
+        background-color: #f3f3f3;
+        }
+        .post_calculate {
+            padding: 10px;
+            margin: 5px;
+            background-color: #f3f3f3;
+            width:400px
+
+
+        }
+        .post_create {
+            padding: 5px;
+            margin: 5px;
+            background-color: #f3f3f3;
+
+            font-size:15px;
+
+
+        }
+
+        nav a {
+
+            color: #d64161;
+            font-size: 2em;
+            margin-left: 50px;
+            text-decoration: none;
+        }
+        .create{
+        margin-left:80px;
+        }
+        .alert {
+            padding: 20px;
+            margin: 5px;
+            color: #970020;
+            background-color: #ffd5de;
+        }
+    </style>
+</head>
+<body style="background:#dbdfea">
+    <div style=background:#788ec5"> <nav>
+        <a href="{{ url_for('index') }}">История</a>
+          <a href="{{ url_for('all_recipe') }}">Рецепты</a>
+        <a href="{{ url_for('all_ingridient') }}">Ингридиенты</a>
+        <a href="{{ url_for('create_ingridient') }}">Добавить ингридиент</a>
+        <a href="{{ url_for('create_recipe') }}">Добавить рецепт</a>
+
+
+    </nav>
+        </div>
+    <hr>
+    <div class="content">
+        {% for message in get_flashed_messages() %}
+            <div class="alert">{{ message }}</div>
+        {% endfor %}
+
+        {% block content %} {% endblock %}
+    </div>
+</body>
+</html>

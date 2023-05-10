@@ -1,0 +1,53 @@
+ {% extends 'base.html' %}
+
+{% block content %}
+    <h1 >{% block title %} Add a New Recipe {% endblock %}</h1>
+ <div style="display:flex;">
+ <div class="h1">
+    <form method="post">
+
+        <table style="border 1px solid #f3f3f3;">
+            <tr>
+            <th>Рецепт</th>
+            <th>Состав</th>
+
+        </tr>
+            <tr>
+                <td class="post_calculate"><input class="post_create"    type="text" name="name_recipe"
+               placeholder="Название рецепта"
+               value="{{ request.form['name_recipe'] }}"></input></td>
+                <td class="post_calculate"><input  class="post_create"  type="text" name="ingridients"
+               placeholder="Ингредиенты"
+               value="{{ request.form['ingridients'] }}"></td>
+            </tr>
+        </table>
+
+
+
+
+
+
+        <button type="submit">Отправить</button>
+    </form>
+     </div>
+ <table style="margin-left:150px;">
+        <tr>
+            <th>Название</th>
+            <th>Цена</th>
+            <th>Вес</th>
+            <th>Коэфициент</th>
+
+        </tr>
+    {% for all in all_ingridient  %}
+        <tr>
+            <td class="post_calculate">{{ all['name'] }}</td>
+            <td class="post_calculate">{{all['cost'] }}</td>
+            <td class="post_calculate">{{ all['weight'] }}</td>
+            <td class="post_calculate">{{ all['koef'] }}</td>
+
+        </tr>
+
+    {% endfor %}
+        </table>
+     </div>
+{% endblock %}

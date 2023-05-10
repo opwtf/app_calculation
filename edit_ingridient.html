@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Изменение   ингридиента</h1>
+    <h1>{% block title %}    {{ingridient['name']}} {% endblock %}</h1>
+<div class="h1" >
+    <form method="post"  >
+
+        <label class="forma" for="name">Название</label>
+        <br>
+        <input class="forma" type="text" name="name"
+               placeholder="Название ингредиента"
+               value="{{ request.form['name'] or ingridient['name']}}"></input>
+        <br>
+
+        <label for="cost">Стоимость</label>
+        <br>
+        <input type="text" name="cost"
+               placeholder="Стоимость ингредиента"
+               value="{{ request.form['cost'] or ingridient['cost']}}"></input>
+        <br>
+
+
+        <label for="weight">Вес</label>
+        <br>
+
+
+        <input type="text" name="weight"
+               placeholder="Вес ингредиента"
+               value="{{ request.form['weight'] or ingridient['weight'] }}"></input>
+        <br>
+
+
+        <label for="koef">Коэфициент</label>
+        <br>
+        <input type="text" name="koef"
+               placeholder="Коэфициент"
+               value="{{ request.form['koef'] or ingridient['koef']}}"></input>
+        <br>
+
+
+        <button type="submit">Отправить</button>
+
+    </form>
+
+</div>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>{% block title %}  {{name}} {% endblock %}</h1>
+<div class="h1">
+<div style="display:flex;">
+    <form method="post" >
+        <table>
+        <tr>
+            <th>Название</th>
+            <th>Цена</th>
+            <th>Вес</th>
+            <th>Коэфициент</th>
+            <th>Расчет</th>
+        </tr>
+
+    {% for all in recipe  %}
+
+                <tr>
+                <td class="post_calculate">{{ all['ingridient'] }}</td>
+                <td class="post_calculate">{{ all['cost'] }}</td>
+                <td class="post_calculate">{{ all['weight'] }}</td>
+                <td class="post_calculate">{{ all['koef'] }}</td>
+            <td> <input type="text" name="res"
+               placeholder="цифра">
+                </td>
+
+            </tr>
+
+
+
+
+    {% endfor %}
+
+
+
+
+
+
+</table>
+<button style="margin-left:380px;" type="submit">Submit</button>
+    </form>
+
+<table style="width:200px;">
+  <tr style="algin:center;"  >
+      <th style="algin:center;" >Расчетное значение</th>
+  </tr>
+
+     {%for item in res%}
+    <tr>
+      <td class="post_calculate">{{item }}</td>
+
+        </tr>
+    {%endfor%}
+    <tr>
+       <td class="post_calculate" > Итог:{{general_res}} </td>
+    </tr>
+
+</table>
+
+  </div>
+    </div>
+{% endblock %}

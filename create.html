@@ -1,0 +1,38 @@
+ {% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Add a New Post {% endblock %}</h1>
+ <div class="forma1">
+    <form method="post">
+        <table>
+            <tr>
+                <td><label   style="font-size:20px;padding: 10px;margin: 5px;" for="name">Название</label></td>
+                <td><input    class="post_create" type="text" name="name"
+               placeholder="Название ингредиента"
+               value="{{ request.form['ingridient'] }}"></td>
+            </tr>
+            <tr>
+                <td> <label  style="font-size:20px;padding: 10px;margin: 5px;" for="cost">Стоимость</label></td>
+                <td><input class="post_create" type="text" name="cost"
+               placeholder="Стоимость ингредиента"
+               value="{{ request.form['cost'] }}"></td>
+            </tr>
+            <tr>
+                <td><label style="font-size:20px;padding: 10px;margin: 5px;" for="weight">Вес</label></td>
+                <td> <input class="post_create" type="text" name="weight"
+               placeholder="Вес ингредиента"
+               value="{{ request.form['weight'] }}"></td>
+            </tr>
+            <tr>
+                <td><label style="font-size:20px;padding: 10px;margin: 5px;" for="koef">Коэфициент</label></td>
+                <td><input class="post_create" type="text" name="koef"
+               placeholder="Коэфициент "
+               value="{{ request.form['koef'] }}"></td>
+            </tr>
+        </table>
+
+
+        <button type="submit">Отправить</button>
+    </form>
+     </div>
+{% endblock %}
